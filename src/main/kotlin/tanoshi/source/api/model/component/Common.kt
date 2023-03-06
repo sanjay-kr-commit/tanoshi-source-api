@@ -2,7 +2,7 @@ package tanoshi.source.api.model.component
 
 import tanoshi.source.api.model.Extension
 
-open class Common<T>( source : Extension<T> ) {
+open class Common<T>( source : Extension<T>? ) {
 
     lateinit var url : String
 
@@ -26,7 +26,7 @@ open class Common<T>( source : Extension<T> ) {
 
     var lang : String? = null
 
-    val extensionName : String? = source::class.java.name
+    var extensionName : String? = source?.let { it::class.java.name }
 
     fun getGenre() : List<String>? {
         return if ( genre.isNullOrEmpty() ) null
