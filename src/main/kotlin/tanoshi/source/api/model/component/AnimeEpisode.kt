@@ -6,6 +6,8 @@ class AnimeEpisode {
 
     lateinit var name : String
 
+    var watchStatus : Boolean = false
+
     var upload_date : String? = null
 
     var episode_number : Float = -1f
